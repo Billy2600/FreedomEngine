@@ -214,7 +214,14 @@ public class Player : PlayerMotor
 	private void UpdateSkinAnimaiton()
 	{
 		skin.animator.SetFloat(horizontalSpeedHash, Mathf.Abs(velocity.x));
-		skin.animator.SetFloat(animationSpeedHash, Mathf.Lerp(0.8f, 3, velocity.magnitude / stats.maxSpeed));
+        if (state.GetCurrentStateType() == typeof(DropDashPlayerState))
+        {
+            skin.animator.SetFloat(animationSpeedHash, 10);
+        }
+        else
+        {
+            skin.animator.SetFloat(animationSpeedHash, Mathf.Lerp(0.8f, 3, velocity.magnitude / stats.maxSpeed));
+        }
 		skin.animator.SetInteger(stateHash, state.stateId);
 		skin.animator.SetBool(groundedHash, grounded);
 	}

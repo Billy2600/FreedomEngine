@@ -48,4 +48,7 @@ public class PlayerStats : ScriptableObject
 	public float maxChargePower;
 	public float minReleasePower;
 	public float powerLoss;
+
+    [Header("Drop Dash")]
+    public float dropdashPower;
 }

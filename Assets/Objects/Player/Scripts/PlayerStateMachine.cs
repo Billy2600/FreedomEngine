@@ -49,4 +49,9 @@ public class PlayerStateMachine
 			states[currentState].Step(player, deltaTime);
 		}
 	}
+
+    public Type GetCurrentStateType()
+    {
+        return currentState;
+    }
 }
